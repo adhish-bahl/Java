@@ -14,6 +14,7 @@ abstract class Person {
     }
 
     public void get() {
+        
         Scanner scanner = new Scanner(System.in);
         System.out.print("Name: ");
         name = scanner.next();

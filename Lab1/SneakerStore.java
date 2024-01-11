@@ -16,7 +16,7 @@ class SneakersStore {
     SneakersStore(String brand, String name, float price, int quantity) {
         this.brand = brand;
         this.name = name;
-        this.price = price;
+        this.price = price; 
         this.quantity = quantity;
     }
 

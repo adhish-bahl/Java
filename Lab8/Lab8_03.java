@@ -54,25 +54,10 @@ public class Lab8_03 {
         System.out.print("Quantity: ");
         int sneakerQuantity = scanner.nextInt();
 
-        System.out.println("\n==============================================================\n\n\n");
+        System.out.println("\n==============================================================\n\n");
 
         Sneaker newSneaker = createSneaker(sneakerName, sneakerBrand, sneakerSize, sneakerPrice, sneakerQuantity);
         inventory.add(newSneaker);
-    }
-
-    private static void insertCustomer(List<Customer> customers) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter customer details:");
-        System.out.print("Name: ");
-        String customerName = scanner.next();
-        System.out.print("Age: ");
-        int customerAge = scanner.nextInt();
-
-        System.out.println("\n==============================================================\n\n\n");
-
-        Customer newCustomer = createCustomer(customerName, customerAge);
-        customers.add(newCustomer);
     }
 
     private static void displayInventory(List<Sneaker> inventory) {
@@ -85,7 +70,7 @@ public class Lab8_03 {
                         sneaker.price, sneaker.quantity);
             }
         }
-        System.out.println("\n==============================================================\n\n\n");
+        System.out.println("\n==============================================================\n\n");
     }
 
     private static void displayCustomers(List<Customer> customers) {
@@ -97,7 +82,7 @@ public class Lab8_03 {
                 System.out.printf(" %s | %d years old | Rs. %.2f\n", customer.name, customer.age, customer.totalAmount);
             }
         }
-        System.out.println("\n==============================================================\n\n\n");
+        System.out.println("\n==============================================================\n\n");
     }
 
     private static void deleteSneaker(List<Sneaker> inventory) {
@@ -112,7 +97,7 @@ public class Lab8_03 {
         } else {
             System.out.println("Sneaker " + name + " not found in the inventory.");
         }
-        System.out.println("\n==============================================================\n\n\n");
+        System.out.println("\n==============================================================\n\n");
     }
 
     private static void deleteCustomer(List<Customer> customers) {
@@ -127,7 +112,7 @@ public class Lab8_03 {
         } else {
             System.out.println("Customer " + name + " not found.");
         }
-        System.out.println("\n==============================================================\n\n\n");
+        System.out.println("\n==============================================================\n\n");
     }
 
     private static void buySneaker(List<Sneaker> inventory, List<Customer> customers) {
@@ -146,7 +131,7 @@ public class Lab8_03 {
 
         if (selectedSneaker == null) {
             System.out.println("Sneaker not found in the inventory.");
-            System.out.println("\n==============================================================\n\n\n");
+            System.out.println("\n==============================================================\n\n");
             return;
         }
 
@@ -155,7 +140,7 @@ public class Lab8_03 {
 
         if (quantity > selectedSneaker.quantity) {
             System.out.println("Insufficient quantity in stock.");
-            System.out.println("\n==============================================================\n\n\n");
+            System.out.println("\n==============================================================\n\n");
             return;
         }
 
@@ -164,7 +149,7 @@ public class Lab8_03 {
         customerName = scanner.next();
         System.out.print("Age: ");
         customerAge = scanner.nextInt();
-        System.out.println("\n==============================================================\n\n\n");
+        System.out.println("\n==============================================================\n\n");
 
         customers.add(createCustomer(customerName, customerAge));
 
@@ -183,7 +168,7 @@ public class Lab8_03 {
                 "\t\t\tSneakShop\n\t\t\t===========\n\n " +
                 selectedSneaker.name + "\t\t " + quantity + "\t\t Rs. " + selectedSneaker.price + "\n\n" +
                 "\t\t\t\tTotal Amount: Rs. " + totalAmount + "\n\n\t\t\tThank you");
-        System.out.println("\n==============================================================\n\n\n");
+        System.out.println("\n==============================================================\n\n");
     }
 
     public static void main(String[] args) {
