@@ -207,11 +207,11 @@ public class Frame1 extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -267,6 +267,18 @@ public class Frame1 extends javax.swing.JFrame {
 
         jMenu1.add(jMenu2);
 
+        jMenuBar1.add(jMenu1);
+
+        jMenu4.setText("View");
+
+        jMenuItem2.setText("All Contacts");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem2);
+
         jMenu3.setText("Search");
 
         jMenuItem6.setText("By Name");
@@ -285,19 +297,7 @@ public class Frame1 extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem7);
 
-        jMenu1.add(jMenu3);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu4.setText("View");
-
-        jMenuItem2.setText("All Contacts");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem2);
+        jMenu4.add(jMenu3);
 
         jMenuBar1.add(jMenu4);
 
