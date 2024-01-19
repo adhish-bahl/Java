@@ -447,7 +447,7 @@ private void deleteCustomerFromDatabase(String customerName) {
                 String customerName = customername.getText();
                 int customerAge = Integer.parseInt(customerage.getText());
 
-                insertCustomerIntoDatabase(createCustomer(customerName, customerAge));
+//                insertCustomerIntoDatabase(createCustomer(customerName, customerAge));
                 customers.add(createCustomer(customerName, customerAge));
                 float totalAmount = quantity * selectedSneaker.price;
 
@@ -457,6 +457,7 @@ private void deleteCustomerFromDatabase(String customerName) {
                 for (Customer currentCustomer : customers) {
                     if (currentCustomer.name.equals(customerName)) {
                         currentCustomer.totalAmount += totalAmount;
+                        insertCustomerIntoDatabase(createCustomer(customerName, customerAge));
                         break;
                     }
                 }

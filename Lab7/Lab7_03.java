@@ -1,4 +1,8 @@
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
 
 class Sneaker {
     private String brand;
@@ -50,7 +54,8 @@ public class Lab7_03 {
             System.out.println("2. Display All Sneakers");
             System.out.println("3. Display Limited Edition Sneakers");
             System.out.println("4. Sort Sneakers by Price");
-            System.out.println("5. Exit");
+            System.out.println("5. Sort Sneakers by Brand");
+            System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
 
             choice = scanner.nextInt();
@@ -74,13 +79,17 @@ public class Lab7_03 {
                     break;
 
                 case 5:
-                    System.out.println("Exiting...");
+                    sortSneakersByBrand();
+                    break;
+
+                case 6:
+                System.out.println("Exiting...");
                     break;
 
                 default:
-                    System.out.println("Invalid choice. Please enter a number between 1 and 5.");
+                    System.out.println("Invalid choice. Please enter a number between 1 and 6.");
             }
-        } while (choice != 5);
+        } while (choice != 6);
 
         scanner.close();
     }
@@ -129,7 +138,6 @@ public class Lab7_03 {
         for (int i = 0; i < numberOfSneakers - 1; i++) {
             for (int j = 0; j < numberOfSneakers - i - 1; j++) {
                 if (sneakers[j].getPrice() > sneakers[j + 1].getPrice()) {
-                    // Swap sneakers[j] and sneakers[j + 1]
                     Sneaker temp = sneakers[j];
                     sneakers[j] = sneakers[j + 1];
                     sneakers[j + 1] = temp;
@@ -140,4 +148,17 @@ public class Lab7_03 {
         System.out.println("\nSneakers Sorted by Price:");
         displaySneakers();
     }
+
+    private static void sortSneakersByBrand() {
+        List<String> customBrandOrder = Arrays.asList("Nike", "Adidas", "New Balance", "Reebok", "Puma");
+
+        Comparator<Sneaker> brandComparator = Comparator.comparingInt(s -> customBrandOrder.indexOf(s.getBrand()));
+
+        Arrays.sort(sneakers, 0, numberOfSneakers, brandComparator);
+
+        System.out.println("\nSneakers Sorted by Brand (Custom Order):");
+        displaySneakers();
+    }
+
+
 }
